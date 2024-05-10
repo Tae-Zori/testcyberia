@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.cases {
+    max-width: 1240px;
+
+    &__categories {
+        margin-top: 65px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        margin-top: 134px;
+        font-family: "Fira Sans Condensed", sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 57.6px;
+        text-align: left;
+        color: #eef3ff;
+    }
+    &__projects {
+        margin-top: 52px;
+        display: grid;
+        justify-content: center;
+        place-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    &__form {
+        width: 1240px;
+        height: 639px;
+        margin-top: 84px;
+    }
+    &__formTitle {
+        width: 361px;
+        height: 116px;
+        margin-bottom: 78px;
+        font-family: "Fira Sans Condensed", sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 57.6px;
+        text-align: left;
+        color: #eef3ff;
+    }
+}

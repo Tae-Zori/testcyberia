@@ -1,0 +1,19 @@
+body {
+    background: $bgGradient;
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    align-items: center;
+    font-family: "Fira Sans Condensed", sans-serif;
+    &__breadcrumbs {
+        margin-top: 65px;
+        max-width: 126px;
+        height: 16.89px;
+        display: flex;
+        flex-direction: row;
+    }
+}

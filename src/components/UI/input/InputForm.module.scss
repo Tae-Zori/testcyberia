@@ -1,0 +1,57 @@
+@import "../../../style/mixins";
+@import "../../../style/variables";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    &[data-form="other"] {
+        @include sizeInput(387px, 61px);
+    }
+    &[data-form="message"] {
+        @include sizeInput(100%, 139px);
+    }
+
+    &__lab {
+        font-size: 0.75rem;
+        color: #eff3ff;
+        position: relative;
+        left: 10px;
+        top: 0.7rem;
+        margin: 0 0 0 7px;
+        padding: 0 3px;
+        background: $bgGradient;
+        width: fit-content;
+        font-family: "Fira Sans Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 21.6px;
+        text-align: left;
+        font-style: normal;
+    }
+
+    &__field {
+        color: #eff3ff;
+        font-family: "Fira Sans Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 21.6px;
+        padding: 11px 10px;
+        box-sizing: border-box;
+        border: 1.5px #9aa8ba solid;
+        border-radius: 8px;
+        background: #31334100;
+        &[data-form="other"] {
+            @include heightInput(61px);
+        }
+        &[data-form="message"] {
+            @include heightInput(139px);
+        }
+    }
+
+    &__field:focus {
+        outline: none;
+    }
+}

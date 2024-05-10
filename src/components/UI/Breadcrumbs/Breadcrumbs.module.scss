@@ -1,0 +1,27 @@
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    white-space: nowrap;
+
+    color: #9aa8ba;
+    &__crumb {
+        margin-right: 5px;
+
+        &.active {
+            color: #c4d2e3;
+        }
+        a {
+            text-decoration: none;
+            color: #9aa8ba;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

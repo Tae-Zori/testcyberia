@@ -1,0 +1,27 @@
+.btn {
+    width: Fixed (259px) px;
+    height: Hug (62px) px;
+    top: 577px;
+    left: 472px;
+    padding: 20px 45px 20px 45px;
+    gap: 10px;
+    border: none;
+    border-radius: 85px;
+    opacity: 0px;
+    background: #2d76f9;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    color: #ffffff;
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: 0 7px 9px rgba(0, 0, 0, 0.15),
+            inset 0 3px 5px rgba(255, 255, 255, 0.53);
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}

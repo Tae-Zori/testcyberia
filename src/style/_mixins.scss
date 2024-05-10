@@ -1,0 +1,8 @@
+@mixin sizeInput($w, $h){
+    width: $w;
+    height: $h;
+}
+@mixin heightInput($h){
+    width: 100%;
+    height: $h;
+}
