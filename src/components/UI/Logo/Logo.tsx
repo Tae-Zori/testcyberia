@@ -1,23 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cl from "./Logo.module.scss";
 
-interface IPropsLogo {
-    width: string;
-    height: string;
-}
-
-const Logo = ({ width, height }: IPropsLogo) => {
+const Logo = () => {
     return (
-        <section>
+        <>
             <Link to={"/home"}>
                 <img
-                    width={width}
-                    height={height}
+                    className={cl.logo}
                     src={require("../../../images/svg/logo.svg").default}
                     alt="Logo"
                 />
             </Link>
-        </section>
+        </>
     );
 };
 

@@ -13,10 +13,12 @@ function App() {
         <div className="App">
             <Router>
                 <Header />
-                <Main>
+                <div className="App__wrapperCrumbs">
                     <nav className="App__breadcrumbs">
                         <Breadcrumbs />
                     </nav>
+                </div>
+                <Main>
                     <Routes>
                         <Route path="/*" element={<Home />} />
                         <Route path="/home" element={<Home />} />

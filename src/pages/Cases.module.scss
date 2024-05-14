@@ -1,21 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 .cases {
-    max-width: 1240px;
-
-    &__categories {
-        margin-top: 65px;
-        display: flex;
-        justify-content: space-between;
-    }
+    width: 100%;
+    font-family: "Fira Sans Condensed", sans-serif;
+    display: flex;
+    flex-direction: column;
     &__title {
-        margin-top: 134px;
-        font-family: "Fira Sans Condensed", sans-serif;
+        margin-top: 130px;
         font-size: 48px;
         font-weight: 600;
         line-height: 57.6px;
         text-align: left;
         color: #eef3ff;
+    }
+    &__categories {
+        margin-top: 65px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
     &__projects {
         margin-top: 52px;
@@ -25,20 +27,151 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
+
     &__form {
-        width: 1240px;
-        height: 639px;
         margin-top: 84px;
+        margin-bottom: 100px;
     }
     &__formTitle {
         width: 361px;
         height: 116px;
         margin-bottom: 78px;
-        font-family: "Fira Sans Condensed", sans-serif;
         font-size: 48px;
         font-weight: 600;
         line-height: 57.6px;
         text-align: left;
         color: #eef3ff;
+        img {
+            display: none;
+        }
+    }
+    &__wrapperContent,
+    &__wrapperForm {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 1240px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .cases {
+        align-items: center;
+        &__projects {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__wrapperContent,
+        &__wrapperForm {
+            width: 850px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .cases {
+        &__title {
+            width: 600px;
+            margin-top: 41px;
+            font-size: 38px;
+            font-weight: 500;
+        }
+        &__categories {
+            margin-top: 57px;
+            width: 600px;
+            height: 120px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: stretch;
+            justify-items: center;
+        }
+        &__wrapperContent,
+        &__wrapperForm {
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        &__wrapperForm {
+            flex-direction: column;
+        }
+        &__projects {
+            grid-template-columns: 1fr;
+        }
+        &__form {
+            width: 327px;
+            margin-top: 51px;
+            margin-bottom: 32px;
+        }
+        &__formTitle {
+            width: 100%;
+            margin-bottom: 32.85px;
+            p {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .cases {
+        &__title {
+            width: 327px;
+            margin-top: 29px;
+            font-family: "Rubik", sans-serif;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 24.89px;
+        }
+        &__categories {
+            margin-top: 47px;
+            width: 325px;
+            height: 83px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 7.6px;
+        }
+        &__projects {
+            margin-top: 40px;
+            gap: 13px;
+        }
+
+        &__wrapperForm {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background: #252631;
+            margin-top: 48px;
+        }
+        &__form {
+            background: transparent;
+            width: 327px;
+        }
+        &__formTitle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+            width: 100%;
+
+            p {
+                width: 208px;
+                height: 56px;
+                font-family: "Rubik", sans-serif;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 28px;
+                white-space: pre-line;
+            }
+
+            img {
+                display: block;
+                width: 76px;
+                height: 70.15px;
+            }
+        }
     }
 }

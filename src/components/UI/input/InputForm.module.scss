@@ -8,10 +8,10 @@
     width: fit-content;
     position: static;
     &[data-form="other"] {
-        @include sizeInput(387px, 61px);
+        @include widthInput(387px);
     }
     &[data-form="message"] {
-        @include sizeInput(100%, 139px);
+        @include widthInput(100%);
     }
 
     &__lab {
@@ -49,9 +49,74 @@
         &[data-form="message"] {
             @include heightInput(139px);
         }
+        &::placeholder {
+            color: transparent;
+        }
     }
 
     &__field:focus {
         outline: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    .input {
+        &[data-form="other"] {
+            @include widthInput(100%);
+        }
+        &[data-form="message"] {
+            @include widthInput(100%);
+        }
+        &__lab {
+            display: none;
+        }
+        &__field {
+            &[data-form="other"] {
+                @include heightInput(52px);
+            }
+            &[data-form="message"] {
+                @include heightInput(139px);
+                &::placeholder {
+                    position: absolute;
+                    top: 0;
+                    margin-top: 8px;
+                }
+            }
+            &::placeholder {
+                color: #eef3ff;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .input {
+        &[data-form="other"] {
+            @include widthInput(326px);
+        }
+        &[data-form="message"] {
+            @include widthInput(326px);
+        }
+        &__lab {
+            display: none;
+        }
+        &__field {
+            &[data-form="other"] {
+                @include heightInput(52px);
+            }
+            &[data-form="message"] {
+                @include heightInput(139px);
+                &::placeholder {
+                    position: absolute;
+                    top: 0;
+                    margin-top: 8px;
+                }
+            }
+            &::placeholder {
+                color: #eef3ff;
+                text-align: left;
+            }
+        }
     }
 }

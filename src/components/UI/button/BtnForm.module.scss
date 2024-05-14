@@ -25,3 +25,14 @@
         transform: scale(0.9);
     }
 }
+
+@media (max-width: 900px) {
+    .btn {
+        display: flex;
+        padding: 0;
+        width: 327px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+    }
+}

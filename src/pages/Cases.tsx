@@ -53,33 +53,45 @@ export const Cases = () => {
 
     return (
         <article className={cl.cases}>
-            <h1 className={cl.cases__title}>Кейсы</h1>
-            <section className={cl.cases__categories}>
-                {categories &&
-                    !errorCategories &&
-                    categories.items.map((item) => (
-                        <CategoryBtn
-                            key={item.id}
-                            onClick={(e) => fillterProjects(item.name)}
-                            selected={selectedCategory === item.name}
-                        >
-                            {item.name}
-                        </CategoryBtn>
-                    ))}
-            </section>
-            <section className={cl.cases__projects}>
-                {projects &&
-                    !errorProjects &&
-                    filteredProjects?.map((item) => (
-                        <Card key={item.id} project={item} />
-                    ))}
-            </section>
-            <section className={cl.cases__form}>
-                <div className={cl.cases__formTitle}>
-                    <h2>Расскажите о вашем проекте:</h2>
-                </div>
-                <Form />
-            </section>
+            <div className={cl.cases__wrapperContent}>
+                <h1 className={cl.cases__title}>Кейсы</h1>
+
+                <section className={cl.cases__categories}>
+                    {categories &&
+                        !errorCategories &&
+                        categories.items.map((item) => (
+                            <CategoryBtn
+                                key={item.id}
+                                onClick={(e) => fillterProjects(item.name)}
+                                selected={selectedCategory === item.name}
+                            >
+                                {item.name}
+                            </CategoryBtn>
+                        ))}
+                </section>
+                <section className={cl.cases__projects}>
+                    {projects &&
+                        !errorProjects &&
+                        filteredProjects?.map((item) => (
+                            <Card key={item.id} project={item} />
+                        ))}
+                </section>
+            </div>
+
+            <div className={cl.cases__wrapperForm}>
+                <section className={cl.cases__form}>
+                    <div className={cl.cases__formTitle}>
+                        <img
+                            src={require("../images/svg/iconForm.svg").default}
+                            alt="icon"
+                        />
+                        <p>
+                            Расскажите <br /> о вашем проекте:
+                        </p>
+                    </div>
+                    <Form />
+                </section>
+            </div>
         </article>
     );
 };

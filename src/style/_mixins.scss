@@ -1,8 +1,11 @@
-@mixin sizeInput($w, $h){
+@mixin widthInput($w) {
     width: $w;
+}
+@mixin heightInput($h) {
+    width: 100%;
     height: $h;
 }
-@mixin heightInput($h){
-    width: 100%;
+@mixin sizeLogo($w, $h) {
+    width: $w;
     height: $h;
 }

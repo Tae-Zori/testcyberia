@@ -28,3 +28,9 @@ export interface IProjects {
 export interface IPageNames {
     [key: string]: string;
 }
+export interface IFeedbackData {
+    phone: string;
+    email: string;
+    message: string;
+    name?: string;
+}

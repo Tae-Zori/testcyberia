@@ -1,6 +1,7 @@
 @import "../../../style/variables";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 .form {
-    min-width: 800px;
     max-width: 1240px;
     width: 100%;
     margin: 0 auto;
@@ -8,6 +9,7 @@
     &__container {
         display: flex;
         align-items: center;
+        height: 251px;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 20px;
@@ -24,7 +26,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 66px;
+        margin-top: 67px;
+    }
+    &__btnBoxMobile {
+        display: none;
     }
 
     &__agree {
@@ -84,5 +89,66 @@
     &__checkbox:checked + .form__checkmark:after {
         opacity: 1;
         transform: rotate(45deg) scale(1);
+    }
+    &__agreeMessage {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    .form {
+        &__container {
+            height: 100%;
+            flex-wrap: wrap;
+        }
+        &__otherInputs {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .form {
+        &__container {
+            height: 100%;
+        }
+        &__agree {
+            display: none;
+        }
+        &__btnBoxMobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 67px;
+            margin-top: 50px;
+        }
+        &__btnBox {
+            display: none;
+        }
+        &__agreeMessage {
+            display: flex;
+            margin-top: 26.09px;
+            width: 100%;
+            height: 36px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 17.7px;
+            text-align: center;
+            color: #eef3ff;
+        }
+        &__otherInputs {
+            gap: 22px;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .form {
+        &__btnBoxMobile {
+            margin-top: 42px;
+        }
     }
 }

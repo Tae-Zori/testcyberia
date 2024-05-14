@@ -9,7 +9,6 @@
     font-size: 24px;
     font-family: "Fira Sans Condensed", sans-serif;
     line-height: 28.8px;
-    text-align: left;
     color: #ffffff;
     transition: all 0.3s;
 
@@ -22,5 +21,33 @@
     }
     &:active {
         transform: scale(0.9);
+    }
+}
+
+@media (max-width: 1300px) {
+    .btn {
+        width: 190px;
+    }
+}
+@media (max-width: 900px) {
+    .btn {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 220px;
+        height: 45px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        line-height: 16.34px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn {
+        width: 158.7px;
+        height: 33px;
+        font-size: 12px;
     }
 }

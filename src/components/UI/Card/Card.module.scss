@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 .card {
     position: relative;
     overflow: hidden;
@@ -52,5 +53,67 @@
         font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
+    }
+    &__overlay {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 327px;
+        height: 320px;
+
+        &__img {
+            width: 327px;
+            height: 320px;
+        }
+        &__box {
+            display: none;
+        }
+        &__overlay {
+            position: absolute;
+            display: flex;
+            align-items: end;
+            width: 327px;
+            height: 320px;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            z-index: 2;
+            background: linear-gradient(
+                360deg,
+                #090b21 0%,
+                rgba(49, 51, 65, 0) 70.08%
+            );
+        }
+        &__mobileBox {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 29px 23px 29px;
+            background: transparent;
+            color: #ffffff;
+            p {
+                font-family: "Open Sans", sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+                margin-top: 6px;
+            }
+        }
+        &__titleMob {
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21.33px;
+            margin-top: 10px;
+        }
+        &__decorationMob {
+            width: 17px;
+            height: 17px;
+            fill: #ffffff;
+            filter: brightness(0) invert(1) grayscale(1);
+        }
     }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import cl from "./Card.module.scss";
 import { IProject } from "../../../interfaces/Interfaces";
 
@@ -22,6 +22,22 @@ export const Card = ({ project }: IPropsCard) => {
                 />
                 <div className={cl.card__title}>
                     <span>{project.title}</span>
+                </div>
+            </div>
+            <div className={cl.card__overlay}>
+                <div className={cl.card__mobileBox}>
+                    <img
+                        className={cl.card__decorationMob}
+                        src={require("../../../images/svg/imgCard.svg").default}
+                        alt=""
+                    />
+                    <div className={cl.card__titleMob}>
+                        <span>{project.title}</span>
+                    </div>
+                    <p>
+                        Онлайн гипермаркет. Для компании были разработаны сайт и
+                        мобильное приложение и т.д.
+                    </p>
                 </div>
             </div>
         </div>
