@@ -1,3 +1,4 @@
+@import "./../../../style/variables";
 .btn {
     width: Fixed (259px) px;
     height: Hug (62px) px;
@@ -7,7 +8,7 @@
     gap: 10px;
     border: none;
     border-radius: 85px;
-    background: #2d76f9;
+    background: $myBlue;
     font-family: "Fira Sans Condensed", sans-serif;
     font-size: 18px;
     font-weight: 400;

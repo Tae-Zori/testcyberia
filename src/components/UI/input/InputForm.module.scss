@@ -7,6 +7,7 @@
     flex-direction: column;
     width: fit-content;
     position: static;
+
     &[data-form="other"] {
         @include widthInput(387px);
     }
@@ -43,6 +44,18 @@
         border: 1.5px #9aa8ba solid;
         border-radius: 8px;
         background: #31334100;
+        &[type="number"] {
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
         &[data-form="other"] {
             @include heightInput(61px);
         }

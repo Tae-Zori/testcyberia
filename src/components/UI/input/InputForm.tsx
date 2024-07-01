@@ -20,7 +20,6 @@ const InputForm = (props: InputProps) => {
             <label className={cl.input__lab}>{props.label}</label>
             <input
                 {...props}
-                type="text"
                 className={cl.input__field}
                 placeholder={props.label}
                 data-form={form}

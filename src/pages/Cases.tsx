@@ -1,14 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { fetchData } from "../data/Data";
-import { ICategories, IProject, IProjects } from "../interfaces/Interfaces";
 import CategoryBtn from "../components/UI/button/CategoryBtn";
 import cl from "./Cases.module.scss";
 import Card from "../components/UI/Card/Card";
 import Form from "../components/UI/form/Form";
+import Loader from "../components/UI/loader/Loader";
+
+export interface ICategoria {
+    id: number;
+    name: string;
+}
+
+export interface IProject {
+    id: number;
+    title: string;
+    slug: string;
+    project_url: null | string;
+    image: string;
+    image_dark: string;
+    description: string;
+    geo: {
+        lat: null | string;
+        lng: null | string;
+    };
+    categories: ICategoria[];
+}
+
+export interface ICategories {
+    items: ICategoria[];
+}
+
+export interface IProjects {
+    items: IProject[];
+}
 
 export const Cases = () => {
     const [categories, setCategories] = useState<ICategories | null>(null);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loadingCategories, setLoadingCategories] = useState<boolean>(true);
+    const [loadingProjects, setLoadingProjects] = useState<boolean>(true);
     const [errorCategories, setErrorCategories] = useState<string>("");
     const [projects, setProjects] = useState<IProjects | null>(null);
     const [errorProjects, setErrorProjects] = useState<string>("");
@@ -23,17 +52,16 @@ export const Cases = () => {
         fetchData(
             "https://api.test.cyberia.studio/api/v1/project-categories",
             setCategories,
-            setLoading,
+            setLoadingCategories,
             setErrorCategories
         );
         fetchData(
             "https://api.test.cyberia.studio/api/v1/projects",
             setProjects,
-            setLoading,
+            setLoadingProjects,
             setErrorProjects
         );
     }, []);
-
     useEffect(() => {
         setFilteredProjects(projects?.items);
     }, [projects]);
@@ -53,45 +81,60 @@ export const Cases = () => {
 
     return (
         <article className={cl.cases}>
-            <div className={cl.cases__wrapperContent}>
-                <h1 className={cl.cases__title}>Кейсы</h1>
+            {loadingCategories || loadingProjects ? (
+                <div className={cl.cases__loader}>
+                    <Loader />
+                </div>
+            ) : errorCategories || errorProjects ? (
+                <p className={cl.cases__error}>Не удалось получить данные</p>
+            ) : (
+                <>
+                    <div className={cl.cases__wrapperContent}>
+                        <h1 className={cl.cases__title}>Кейсы</h1>
 
-                <section className={cl.cases__categories}>
-                    {categories &&
-                        !errorCategories &&
-                        categories.items.map((item) => (
-                            <CategoryBtn
-                                key={item.id}
-                                onClick={(e) => fillterProjects(item.name)}
-                                selected={selectedCategory === item.name}
-                            >
-                                {item.name}
-                            </CategoryBtn>
-                        ))}
-                </section>
-                <section className={cl.cases__projects}>
-                    {projects &&
-                        !errorProjects &&
-                        filteredProjects?.map((item) => (
-                            <Card key={item.id} project={item} />
-                        ))}
-                </section>
-            </div>
-
-            <div className={cl.cases__wrapperForm}>
-                <section className={cl.cases__form}>
-                    <div className={cl.cases__formTitle}>
-                        <img
-                            src={require("../images/svg/iconForm.svg").default}
-                            alt="icon"
-                        />
-                        <p>
-                            Расскажите <br /> о вашем проекте:
-                        </p>
+                        <section className={cl.cases__categories}>
+                            {categories &&
+                                categories.items.map((item) => (
+                                    <CategoryBtn
+                                        key={item.id}
+                                        onClick={() =>
+                                            fillterProjects(item.name)
+                                        }
+                                        selected={
+                                            selectedCategory === item.name
+                                        }
+                                    >
+                                        {item.name}
+                                    </CategoryBtn>
+                                ))}
+                        </section>
+                        <section className={cl.cases__projects}>
+                            {projects &&
+                                filteredProjects?.map((item) => (
+                                    <Card key={item.id} project={item} />
+                                ))}
+                        </section>
                     </div>
-                    <Form />
-                </section>
-            </div>
+
+                    <div className={cl.cases__wrapperForm}>
+                        <section className={cl.cases__form}>
+                            <div className={cl.cases__formTitle}>
+                                <img
+                                    src={
+                                        require("../images/svg/iconForm.svg")
+                                            .default
+                                    }
+                                    alt="icon"
+                                />
+                                <p>
+                                    Расскажите <br /> о вашем проекте:
+                                </p>
+                            </div>
+                            <Form />
+                        </section>
+                    </div>
+                </>
+            )}
         </article>
     );
 };

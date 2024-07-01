@@ -1,7 +1,10 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import cl from "./Breadcrumbs.module.scss";
-import { IPageNames } from "../../../interfaces/Interfaces";
+
+interface IPageNames {
+    [key: string]: string;
+}
 
 const pageNames: IPageNames = {
     home: "Главная",

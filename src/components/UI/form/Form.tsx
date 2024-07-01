@@ -2,10 +2,9 @@ import { useState } from "react";
 import BtnForm from "../button/BtnForm";
 import InputForm from "../input/InputForm";
 import cl from "./Form.module.scss";
-import {
-    sendFeedbackDesktop,
-    sendFeedbackMobile,
-} from "../../../functions/feedbackActions";
+import { sendFeedback } from "../../../service/feedback";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Form = () => {
     const [name, setName] = useState<string>("");
@@ -16,28 +15,44 @@ export const Form = () => {
 
     return (
         <form className={cl.form}>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className={cl.form__container}>
                 <div className={cl.form__otherInputs}>
                     <InputForm
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         label={"Ваше имя*"}
+                        type="text"
                     />
                     <InputForm
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         label={"Email*"}
+                        type="text"
                     />
                     <InputForm
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         label={"Телефон*"}
+                        type="number"
                     />
                 </div>
                 <InputForm
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     label={"Сообщение*"}
+                    type="text"
                 />
             </div>
 
@@ -56,7 +71,7 @@ export const Form = () => {
             <div className={cl.form__btnBox}>
                 <BtnForm
                     onClick={(event) =>
-                        sendFeedbackDesktop({
+                        sendFeedback({
                             event,
                             formData: { name, email, phone, message },
                             setName,
@@ -73,7 +88,7 @@ export const Form = () => {
             <div className={cl.form__btnBoxMobile}>
                 <BtnForm
                     onClick={(event) =>
-                        sendFeedbackMobile({
+                        sendFeedback({
                             event,
                             formData: { name, email, phone, message },
                             setName,

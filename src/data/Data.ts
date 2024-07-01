@@ -9,19 +9,25 @@ export function fetchData(
     setLoading: SetLoadingFncn,
     setError: SetErrorFncn
 ): void {
-    async function fetchFnc() {
+    async function fetchAndHandleData() {
         setLoading(true);
         setError("");
         try {
             const response = await fetch(url);
-            const data = await response.json();
-            setData(data);
+            if (response.ok) {
+                const data = await response.json();
+                setData(data);
+            } else {
+                setError("Ошибка получения данных");
+                console.log("Ошибка API");
+            }
         } catch (error: any) {
-            setError(error.message);
+            setError("Ошибка получения данных");
+            console.log("Message", error.message);
         } finally {
             setLoading(false);
         }
     }
 
-    fetchFnc();
+    fetchAndHandleData();
 }

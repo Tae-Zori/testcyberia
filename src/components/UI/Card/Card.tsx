@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import cl from "./Card.module.scss";
-import { IProject } from "../../../interfaces/Interfaces";
+import { IProject } from "../../../pages/Cases";
 
 interface IPropsCard {
     project: IProject;
