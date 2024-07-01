@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/testcyberia/static/css/main.749f1657.css",
-    "main.js": "/testcyberia/static/js/main.095576ad.js",
+    "main.css": "/testcyberia/static/css/main.f8fba472.css",
+    "main.js": "/testcyberia/static/js/main.255a5ac7.js",
     "static/media/iconForm.svg": "/testcyberia/static/media/iconForm.2da4adbca373694c986cc03b07f940e1.svg",
     "static/media/logo.svg": "/testcyberia/static/media/logo.baa3d4ba260040355cf858d82a68f3cf.svg",
     "index.html": "/testcyberia/index.html",
     "static/media/imgCard.svg": "/testcyberia/static/media/imgCard.9b9c01629815a86a57ab1a7ad4031745.svg",
     "static/media/menu.svg": "/testcyberia/static/media/menu.859baf6fc2b1895def4561f0e9fca5ee.svg",
     "static/media/close.svg": "/testcyberia/static/media/close.5d923909fe3299674820ffce6a8513b4.svg",
-    "main.749f1657.css.map": "/testcyberia/static/css/main.749f1657.css.map",
-    "main.095576ad.js.map": "/testcyberia/static/js/main.095576ad.js.map"
+    "main.f8fba472.css.map": "/testcyberia/static/css/main.f8fba472.css.map",
+    "main.255a5ac7.js.map": "/testcyberia/static/js/main.255a5ac7.js.map"
   },
   "entrypoints": [
-    "static/css/main.749f1657.css",
-    "static/js/main.095576ad.js"
+    "static/css/main.f8fba472.css",
+    "static/js/main.255a5ac7.js"
   ]
 }
